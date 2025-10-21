@@ -1,0 +1,62 @@
+def readPoly():
+    p={}
+    n=int(input("Enter the degree of the polynomial: "))
+    for i in range(n):
+        print("Enter the coefficient of x^",i,": ",sep='',end='')
+        p[i]=int(input())
+    return p
+def printPoly(p):
+    res=""
+    for expo,coeff in p.items():
+        if expo==0:
+            res+=str(coeff)
+        else:
+            if int(coeff)==0:
+                pass
+            else:
+                res=res+'+'+str(coeff)+'x^'+str(expo)
+                print(res)
+def add_poly(p1,p2):
+    p3={}
+    exp1=sorted(p1.keys())
+    exp2=sorted(p2.keys())
+    i=j=0
+    while i<len(exp1) and j<len(exp2):
+        e=exp1[i]
+        f=exp2[j]
+        if e<f:
+            p3[e]=p1[e] 
+            i+=1
+        elif e>f:
+            p3[f]=p2[f]
+            j+=1
+        else:
+            p3[e]=p1[e]+p2[f]
+            i+=1
+            j+=1
+    while i<len(exp1):
+        e=exp1[i]
+        p3[e]=p1[e]
+        i+=1
+    while j<len(exp2):
+        f=exp2[j]
+        p3[f]=p2[f]
+        j+=1
+        return p3
+def addPoly2():
+    p3={}
+    all_expo=set(p.keys())|(set(p2.keys()))
+    for exp in all_expo:
+        coef1=p1.get(exp,0)#p1de yoksa 0 al 
+        coef2=p2.get(exp,0)#p2de yoksa 0 al
+
+        p3[exp]=coef1+coef2
+    return p3
+p1=readPoly()
+p2=readPoly() 
+printPoly(p1)
+printPoly(p2)  
+
+                
+ 
+                 
