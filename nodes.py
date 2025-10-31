@@ -24,7 +24,7 @@ class LinkedList:
         newnode.next = self.start
         self.start = newnode
 
-    def insertEnd(self, newdata):
+    def inserEnd(self, newdata):
         newnode = Node(newdata)
         if self.start is None:
             self.start = newnode
