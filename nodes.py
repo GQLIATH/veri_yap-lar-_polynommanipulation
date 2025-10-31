@@ -24,7 +24,7 @@ class LinkedList:
         newnode.next = self.start
         self.start = newnode
 
-    def inserEnd(self, newdata):
+    def insertEnd(self, newdata):
         newnode = Node(newdata)
         if self.start is None:
             self.start = newnode
@@ -138,3 +138,4 @@ if __name__ == '__main__':
             break
         else:
             print("Invalid choice, please try again.")
+
