@@ -3,19 +3,19 @@ class Node:
         self.key=key
         self.left=None
         self.right=None
-def inorder (root):
+def inorder (root):#LDR
       if root is not None:
        inorder(root.left)
        print(str(root.key),end="-> ")
        inorder(root.right)
-def preorder (root):
+def preorder (root):#DLR
       if root is not None:
        print(str(root.key),end="-> ")
        preorder(root.left)
        
        preorder(root.right)
 
-def postorder (root):
+def postorder (root):#LRD
       if root is not None:
        postorder(root.left)
        postorder(root.right)
@@ -33,4 +33,5 @@ inorder(root)
 print("\npreorder traversal: ",end=" ")
 preorder(root)
 print("\npostorder traversal: ",end=" ")
+
 postorder(root)
